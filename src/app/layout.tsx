@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const arial = localFont({
-  src: "./fonts/Arial.ttf",
-  variable: "--arial",
-});
+// const arial = localFont({
+//   src: "@/public/fonts/Arial.ttf",
+//   variable: "--arial",
+// });
 const futura = localFont({
-  src: "./fonts/Futura.ttf",
+  src: "../../public/fonts/Futura.ttf",
   variable: "--futura",
 });
 
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${arial.variable} ${futura.variable} antialiased`}
+        className={`${futura.variable} antialiased`}
       >
         {children}
       </body>

@@ -4,10 +4,12 @@
 
 @font-face {
   font-family: 'Futura';
-  src: url('/src/app/fonts/Futura.ttf') format('ttf'); /* Update with correct path */
+  src: url('/public/fonts/Futura.ttf') format('ttf'); 
   font-weight: bolder;
   font-style: normal;
 }
+
+
 
 h1 {
   font-family: 'Futura', 'arial', 'sans';
