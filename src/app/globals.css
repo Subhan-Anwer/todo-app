@@ -2,26 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'Futura';
+  src: url('/src/app/fonts/Futura.ttf') format('ttf'); /* Update with correct path */
+  font-weight: bolder;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+h1 {
+  font-family: 'Futura', 'arial', 'sans';
+  font-weight: 600;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #131313;
 }
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+ul {
+  width: 445px;
+  align-self: center;
+}
+
+ul li {
+  width:  85%;
+  list-style: none;
+  font-size: 17px;
+  padding: 8px 8px 8px 50px;
+  user-select: none;
+  cursor: pointer;
+  color: #b8b8b8;
+  position: relative;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-image: url("../images/unchecked.png");
+  background-size: cover;
+  background-position: center;
+  top: 6px;
+  left: 6px;
+}
+
+ul li span {
+  content: '';
+  position: absolute;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-image: url("../images/cross.png");
+  background-size: cover;
+  background-position: center;
+  top: 6px;
+  right: -40px;
+}
+
+ul li.checked {
+  color: #7c7c7c;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url("../images/checked.png");
 }
