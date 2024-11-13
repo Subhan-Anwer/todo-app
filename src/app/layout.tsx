@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-// const arial = localFont({
-//   src: "@/public/fonts/Arial.ttf",
-//   variable: "--arial",
-// });
+
 const futura = localFont({
   src: "../../public/fonts/Futura.ttf",
   variable: "--futura",

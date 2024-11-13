@@ -5,13 +5,13 @@ export default function Home() {
   const [title, settitle] = useState<string>('');
   // const [mainTask, setMainTask] = useState<Task[]>([]);
 
-  let listContainer = document.getElementById('list-container');
+  const listContainer = document.getElementById('list-container');
 
   const addTask = () => {
     if (title === '') {
       alert('PLease enter a task'); 
     } else {
-      let li = document.createElement("li");
+      const li = document.createElement("li");
       li.innerHTML = `${title} <span></span>`; 
       listContainer?.appendChild(li);   
     }
