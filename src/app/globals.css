@@ -30,7 +30,7 @@ ul {
   align-self: center;
 }
 
-ul li {
+li {
   width:  85%;
   list-style: none;
   font-size: 17px;
@@ -41,7 +41,7 @@ ul li {
   position: relative;
 }
 
-ul li::before {
+li::before {
   content: '';
   position: absolute;
   height: 32px;
@@ -54,7 +54,7 @@ ul li::before {
   left: 6px;
 }
 
-ul li span {
+li span {
   content: '';
   position: absolute;
   height: 32px;
@@ -67,11 +67,11 @@ ul li span {
   right: -40px;
 }
 
-ul li.checked {
+li.checked {
   color: #7c7c7c;
   text-decoration: line-through;
 }
 
-ul li.checked::before {
+li.checked::before {
   background-image: url("../images/checked.png");
 }
