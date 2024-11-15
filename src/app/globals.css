@@ -25,11 +25,6 @@ body {
   }
 }
 
-ul {
-  width: 445px;
-  align-self: center;
-}
-
 li {
   width:  85%;
   list-style: none;
