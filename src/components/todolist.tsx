@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface Todo {
     id: number;
@@ -12,6 +12,9 @@ const TodoList = () => {
     const [todos, setTodos] = useState<Todo[]>([]);
     const [inputValue, setInputValue] = useState("");
 
+
+
+
     const handleAddTask = (e: React.FormEvent) => {
         e.preventDefault();
         if (inputValue.trim()) {
@@ -22,11 +25,15 @@ const TodoList = () => {
             };
             setTodos([...todos, newTask]);
             setInputValue("");
+            localStorage.setItem(`todos${newTask.id}`, JSON.stringify(newTask)); // saves the task with id
         }
+        
     };
 
     const handleDeleteTask = (id: number) => {
         setTodos(todos.filter(todo => todo.id !== id));
+        localStorage.removeItem(`todos${id}`);
+        console.log(`todos${id}`);
     };
 
     const handleToggleComplete = (id: number) => {
@@ -34,6 +41,7 @@ const TodoList = () => {
             todo.id === id ? { ...todo, completed: !todo.completed } : todo
         ));
     };
+
 
     return (
         <div className="flex flex-col w-full max-w-[285px] sm:max-w-[540px] bg-[#212121] text-[#b8b8b8] mt-[100px] mx-auto mb-[20px] pt-[40px] px-[30px] pb-[70px] rounded-[15px]">
